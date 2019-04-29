@@ -1,0 +1,8 @@
+1. 在目录下用vim打开文件
+
+2. 写代码
+
+3. 权限
+chmod a+x hello.py
+
+4. python hello.py 输出结果

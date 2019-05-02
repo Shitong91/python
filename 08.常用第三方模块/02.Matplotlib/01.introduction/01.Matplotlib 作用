@@ -1,0 +1,16 @@
+1. 作用
+Matplotlib 是一个非常强大的 Python 画图工具;
+
+所以就找到了 Matplotlib. 它能帮你画出美丽的:
+
+    线图;
+    散点图;
+    等高线图;
+    条形图;
+    柱状图;
+    3D 图形,
+    甚至是图形动画等等.
+
+2. install
+sudo apt-get install python3-matplotlib
+

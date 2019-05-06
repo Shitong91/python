@@ -2,13 +2,13 @@ import numpy as np
 import operator
 
 def classify0(inX, dataSet, labels, k):
-    dataSetSize = dataSet.shape[0]
+    dataSetSize = dataSet.shape[0] # shape[0]返回矩阵的行数
     diffMat=np.tile(inX, (dataSetSize,1)) - dataSet
-    sqDiffMat =diffMat**2
-    sqDistances =np.sum(sqDiffMat,axis=1)
+    sqDiffMat =diffMat**2   #差值求平方
+    sqDistances =np.sum(sqDiffMat,axis=1) #按列求和
     distances = sqDistances**0.5
     sortedDistIndicies =np.argsort(distances)
-    classCout={}
+    classCout={}   #定义一个dict
     for i in range(k):
         voteIlabel = labels[sortedDistIndicies[i]]
         classCout[voteIlabel] = classCout.get(voteIlabel,0) + 1

@@ -1,0 +1,21 @@
+P39
+
+1. collct data
+
+可以用公开的数据集，也可以自己搜集
+
+2. prepare the input data
+
+涉及输入的数据格式问题，是矩阵还是list
+
+3. Analyze the input data
+
+4. Train the algorithm
+
+这一步只在supervised learning中才需要
+
+5. Test the algorithm
+
+6. use it
+
+

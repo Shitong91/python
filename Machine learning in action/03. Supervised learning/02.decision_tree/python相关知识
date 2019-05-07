@@ -1,0 +1,8 @@
+1. 如何在程序中调用其他文件
+
+2. 如何在python命令端使用 reload
+In Python 2.x, this was a builtin, but in 3.x, it's in the importlib module.
+因此，在python3中，需要from importlib import reload
+
+如果程序修改了，需要使用reload更新一下
+

@@ -1,0 +1,49 @@
+
+1. 概念
+
+In decision tree learning, ID3 (Iterative Dichotomiser 3) is an algorithm invented by Ross Quinlan[1] used to generate a decision tree from a dataset. ID3 is the precursor to the C4.5 algorithm, and is typically used in the machine learning and natural language processing domains. 
+
+这一节讲的decision tree方法叫做ID3,即迭代二叉
+故名思意，迭代的构建树
+2. 使用步骤
+The ID3 algorithm begins with the original set S {\displaystyle S} S as the root node. On each iteration of the algorithm, it iterates through every unused attribute of the set S {\displaystyle S} S and calculates the entropy H ( S ) {\displaystyle \mathrm {H} {(S)}} {\displaystyle \mathrm {H} {(S)}} (or information gain I G ( S ) {\displaystyle IG(S)} {\displaystyle IG(S)}) of that attribute. It then selects the attribute which has the smallest entropy (or largest information gain) value. The set S {\displaystyle S} S is then split or partitioned by the selected attribute to produce subsets of the data. (For example, a node can be split into child nodes based upon the subsets of the population whose ages are less than 50, between 50 and 100, and greater than 100.) The algorithm continues to recur on each subset, considering only attributes never selected before. 
+
+以上的说法又可以分为下面四步
+ 1）.   Calculate the entropy of every attribute a {\displaystyle a} 
+      a of the data set S {\displaystyle S} S.
+计算traning set中例子中的各个特征的entropy
+ 2）.    Partition ("split") the set S {\displaystyle S} S into  
+      subsets   
+      using the attribute for which the resulting entropy after  
+      splitting is  minimized; or, equivalently, information gain is
+      maximum
+ 3）.    Make a decision tree node containing that attribute.
+ 4）.    Recur on subsets using remaining attributes.
+
+3. properties
+
+ID3 does not guarantee an optimal solution. It can converge upon local optima. It uses a greedy strategy by selecting the locally best attribute to split the dataset on each iteration. The algorithm's optimality can be improved by using backtracking during the search for the optimal decision tree at the cost of possibly taking longer.
+
+ID3 can overfit the training data. To avoid overfitting, smaller decision trees should be preferred over larger ones.[further explanation needed] This algorithm usually produces small trees, but it does not always produce the smallest possible decision tree.
+可能发生过拟合，这个时候较小树的规模可以改观，也就是去掉一些叶子节点，让这些叶子节点合并到其他类中
+
+ID3 is harder to use on continuous data.[compared to?] If the values of any given attribute are continuous, then there are many more places to split the data on this attribute, and searching for the best value to split by can be time consuming. 
+在连续数据中使用困难，适合离散数据
+
+再总结：
+可以粗略的分为三步
+1. 计算entropy ，entropy越小或这information gain 越大，说明当前选择的用来分类的feature越好
+
+2. 通过1中选择的最好的feature，以此为基础对training data归类，也就是创建树结构
+2.1 构建树时迭代终止条件，一般为两种
+
+1)every element in the subset belongs to the same class;
+
+2)there are no more attributes to be selected, but the examples still do not belong to the same class. In this case, the node is made a leaf node and labelled with the most common class of the examples in the subset.
+
+3. 使用test data 在2中建成的树结构中搜索，找到自己的位置，就最终完成了分类
+
+注意：最流行的tree-genarated algorithm是 C4.5 和 CART
+暂时没有看这两个，以后再学习
+
+

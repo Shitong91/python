@@ -32,3 +32,10 @@ a=[[1, 2, 3], [2, 3, 1], [4, 5, 6]]
 5. list.count
 
 count() 方法用于统计某个元素在列表中出现的次数。
+
+6. 关于python中的global variable
+函数名.variable de 形式可以定义一个全局变量，然后即可全局使用
+
+7. python命令行下的for循环使用
+
+lenses=[inst.strip().split('\t') for inst in fr.readlines()]

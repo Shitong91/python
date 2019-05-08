@@ -60,7 +60,7 @@ def chooseBestFeatureToSplit(dataSet):
         if(infoGain > bestInfoGain):
             bestInfoGain = infoGain
             bestFeature = i
-    return bestFeature         
+    return bestFeature        #一定要把变量的大小写写对，真是吃了大亏，误把bestFeature=i 写成了 bestfeature=i，没有报错但是结果是有问题了，花了一个多小时才找到问题在哪里 
 
 def majorityCnt(classList):
     classCount={}
@@ -88,6 +88,29 @@ def createTree(dataSet,labels):
         myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value),subLabels)
     return myTree
 
-myDat,labels=createDataSet()
-myTree = createTree(myDat,labels)
-print(myTree)
+#myDat,labels=createDataSet()
+#myTree = createTree(myDat,labels)
+#print(myTree)
+
+def classify(inputTree, featLabels, testVec):
+    firstStr = list(inputTree.keys())[0]
+    secondDict = inputTree[firstStr]
+    featIndex = featLabels.index(firstStr)
+    for key in secondDict.keys():
+        if testVec[featIndex] == key:
+            if type(secondDict[key]).__name__=='dict':
+                classLabel = classify(secondDict[key],featLabels,testVec)
+            else: classLabel = secondDict[key]
+
+    return classLabel
+
+def storeTree(inputTree, filename):
+    import pickle
+    fw = open(filename, 'wb')
+    pickle.dump(inputTree,fw)
+    fw.close()
+
+def grabTree(filename):
+    import pickle
+    fr = open(filename, 'rb')
+    return pickle.load(fr)

@@ -1,0 +1,40 @@
+1.  matplotlib.pyplot.figure()
+
+作用： Create a new figure.
+
+parameters:
+
+num: 给图标号
+figsize : 图大小
+facecolor : the background color. 默认白色
+
+例子：
+fig = plt.figure(1, facecolor='white')
+
+2. fig.clf()
+
+清理1中的图
+
+3. plt.subplot(111, frameon=False)
+
+设置子图的序号，111是1行1列中位置在第一个的意思
+
+4. matplotlib.pyplot.annotate
+
+在图上进行注释
+
+matplotlib.pyplot.annotate(s, xy, *args, **kwargs)
+
+s : str
+
+    The text of the annotation.
+
+xy : (float, float)
+The point (x,y) to annotate.
+
+xytext : (float, float), optional
+The position (x,y) to place the text at. If None, defaults to xy.
+
+arrowprops : dict, optional
+
+    The properties used to draw an arrow between the positions xy and xytext.

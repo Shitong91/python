@@ -1,0 +1,36 @@
+1. 作用
+
+为了解决classification问题
+
+2. 算法概述
+
+2.1 traning
+
+step1: take all features of every example and multiply each one by a weight 
+andadd them up
+
+step2: This result of step1 will be put into the sigmoid
+
+step3: for the output of step2, anything above 0.5 will calssified as a 1, and anything below 0.5 will be classified as a 0
+
+step4: 
+
+2.2 sigmoid function
+
+At 0 the value of the sigmoid is 0.5. For increasing values of x, the sigmoid will approach 1 and for decreasing values of x, the sigmoid will approach 0. 
+
+3.plot boundary
+
+在sigmoid函数的变量中
+
+>0 时，sigmoid输出
+
+>0.5此时被认为1
+
+变量<0, sigmoid输出
+
+<0.5,则被分类为0,
+
+所以wx=0时，被认为是分界线
+
+书中的的plotbestfit函数很很值得学习

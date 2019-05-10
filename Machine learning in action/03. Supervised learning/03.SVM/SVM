@@ -1,0 +1,25 @@
+1. SVM (Support Vector machine)
+也可以叫做 Maximum margin hyper plane
+
+2.应用
+
+2.1 处理linear classification时，SVM很容易
+
+2.2 处理nonlinear，可以加一个kernel functon
+
+3. Kernel function
+
+kernel function的作用就是为了处理非线性可分的问题
+
+kernel 函数的理论基础在于，低维的非线性数据可以通过
+kernel 函数转化为高维度的线性问题
+
+4. 优化soluton
+
+SMO方法
+
+主要归结到优化一组alpha参数，每次只更新alpha参数中的两个
+
+5. 2维分类问题
+
+support vector machines are only a binary classifier.

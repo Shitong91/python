@@ -1,0 +1,29 @@
+
+1. 定义
+
+https://www.cnblogs.com/pinard/p/6133937.html
+
+有Adaboost的详细解释
+
+2. 代码
+
+from sklearn.model_selection import cross_val_score
+from sklearn.datasets import load_iris
+from sklearn.ensemble import AdaBoostClassifier
+
+iris = load_iris()
+clf = AdaBoostClassifier(n_estimators=100)
+scores = cross_val_score(clf, iris.data, iris.target, cv=5)
+scores.mean()  
+
+2.1 参数解释
+
+n_estimators:
+
+控制迭代的数目
+
+base_estimator:  每个弱分类器要使用的分类器。
+默认的是 decisiontree
+
+learning_rate :  不懂这个参数
+

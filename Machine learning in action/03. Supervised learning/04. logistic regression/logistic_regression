@@ -34,3 +34,8 @@ At 0 the value of the sigmoid is 0.5. For increasing values of x, the sigmoid wi
 所以wx=0时，被认为是分界线
 
 书中的的plotbestfit函数很很值得学习
+
+2.2 test
+
+All you have to do is calculate the sigmoid of the vector under test multiplied by the weights optimized earlier. If the sigmoid gives
+you a value greater than 0.5, the class is 1, and it’s 0 otherwise.

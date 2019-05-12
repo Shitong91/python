@@ -1,0 +1,9 @@
+1. python中的map函数
+第一个参数 function 以参数序列中的每一个元素调用 function 函数，返回包含每次 function 函数返回值的新列表。
+map(function, iterable, ...)
+
+>>>def square(x) :            # 计算平方数
+...     return x ** 2
+... 
+>>> map(square, [1,2,3,4,5])   # 计算列表各个元素的平方
+[1, 4, 9, 16, 25]

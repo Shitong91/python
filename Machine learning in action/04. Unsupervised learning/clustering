@@ -1,0 +1,33 @@
+
+1. 定义
+Clustering is a type of unsupervised learning that automatically forms clusters of
+similar things.
+
+With cluster analysis we’re trying to put similar things in a cluster and dissimilar
+things in a different cluster. 
+
+2. K-means cluster
+
+It’s called k means because it finds k unique clusters, and the center of each cluster is the mean of
+the values in that cluster. You’ll see this in more detail in a little bit.
+
+The algorithm will create k centroids, then assign each point to
+the closest centroid, and then recalculate the centroids. This process will repeat
+until the points stop changing clusters. 
+
+step1:
+在最开始的时候，给K个分类随机的分配k个值，作为最初的centriods
+
+step2:
+计算数据集中每个点和k个centroid的distance，这样以来，数据集中
+的每个点要计算k个distances， 选择每个数据点的k个diantances的
+最短的disance，这个最近distance所在的类，就把该数据点
+分配给该类
+
+step3:
+数据集中每个点都有归属以后，就重新把各类中的点计算均值，得到新的k
+个类的centroids
+
+step4:
+重复这些步骤，最终k个类里的点不再发生变化，就停止
+
